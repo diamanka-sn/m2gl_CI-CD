@@ -21,4 +21,4 @@ jobs:
     - name: Build with Maven
       run: mvn clean install -DskipTests
     - name: Deploy to localhost
-      run: java -jar target/cicd.jar
+      run: java -jar "C:\Users\DIAMANKA\Desktop\cicd\cicd.jar"
