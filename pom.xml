@@ -36,6 +36,7 @@
   <groupId>com.azure.spring</groupId>
   <artifactId>spring-cloud-azure-starter-keyvault</artifactId>
 </dependency>
+
 	</dependencies>
 
 	<build>
