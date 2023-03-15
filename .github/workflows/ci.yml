@@ -2,8 +2,9 @@ name: Java CI with Maven and Local Deployment
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
+  pull_request:
+    branches: [master]
 
 jobs:
   build:
@@ -11,14 +12,12 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@master
-    - name: set up JDK 11
-      uses: actions/setup-java@v3
+      uses: actions/checkout@v2
+    - name: set up JDK 1.8
+      uses: actions/setup-java@v1
       with:
-        java-version: '17'
-        distribution: 'temurin'
-              #  cache: gradle
+        java-version: '1.8'
+        distribution: 'adopt'
+        cache: maven
     - name: Build with Maven
-      run: mvn clean install -DskipTests
-    - name: Deploy to localhost
-      run: java -jar "C:\Users\DIAMANKA\Desktop\cicd\cicd.jar"
+      run: mvn clean install
